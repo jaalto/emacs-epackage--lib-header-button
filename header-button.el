@@ -4,8 +4,8 @@
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20100604
-;; Updated: 20100604
-;; Version: 0.1
+;; Updated: 20101218
+;; Version: 0.1-git
 ;; Homepage: https://github.com/tarsius/header-button
 ;; Keywords: extensions
 
@@ -33,7 +33,7 @@
 
 ;; While `button' provides the function `insert-button' (as well as
 ;; others) to insert a button into a buffer at point, something similar
-;; be done here, due to the lack of point in header lines.
+;; can't be done here, due to the lack of point in header lines.
 
 ;; Instead us `format-header-button' like this:
 ;;
@@ -51,8 +51,8 @@
 ;;       (concat (format-header-button "Click me!" :action 'my-action) " "
 ;;               (format-header-button "No me!" :type 'my-header)))
 
-;; The function associated with `:action' is called with the button
-;; plist as only argument.  Do no use `plist-get' extract a value from it.
+;; The function associated with `:action' is called with the button plist
+;; as only argument.  Do no use `plist-get' to extract a value from it.
 ;; Instead use `header-button-get' which will also extract values stored
 ;; in it's type.
 ;;
