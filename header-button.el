@@ -5,7 +5,7 @@
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20100604
 ;; Updated: 20101218
-;; Version: 0.1-git
+;; Version: 0.1.1
 ;; Homepage: https://github.com/tarsius/header-button
 ;; Keywords: extensions
 
@@ -67,7 +67,9 @@
 
 (defvar header-button-map
   (let ((map (make-sparse-keymap)))
+    ;; $$$ follow-link does not work here
     (define-key map [header-line mouse-1] 'push-header-button)
+    (define-key map [header-line mouse-2] 'push-header-button)
     map)
   "Keymap used by buttons in header lines.")
 
