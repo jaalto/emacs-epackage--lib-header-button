@@ -1,11 +1,10 @@
 ;;; header-button.el --- clickable buttons in header lines
 
-;; Copyright (C) 2010  Jonas Bernoulli
+;; Copyright (C) 2010-2011  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20100604
-;; Updated: 20101219
-;; Version: 0.1.1-git
+;; Version: 0.2.0
 ;; Homepage: https://github.com/tarsius/header-button
 ;; Keywords: extensions
 
