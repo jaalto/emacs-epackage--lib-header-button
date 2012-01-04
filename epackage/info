@@ -1,0 +1,21 @@
+Package: lib-header-button
+Section: hypermedia
+License: GPL-3+
+Depends: emacs (>= 22)
+Status: stable
+Compat:
+Maintainer: Jari Aalto <jari.aalto@cante.net>
+Bugs:
+Upstream: Jonas Bernoulli <jonas@bernoul.li>
+Upstream-Bugs:
+Vcs-Type: git
+Vcs-Url: git://github.com/tarsius/header-button.git
+Vcs-Browser: https://github.com/tarsius/header-button
+Homepage:
+Wiki:
+Commentary: library of clickable buttons in header lines
+Description: clickable buttons in header lines
+ This package extends `button' by adding support for adding buttons to the
+ header line. Since the header line is very limited compared to a buffer
+ most of the functionality provided by `button' is not available for
+ buttons in the header line.

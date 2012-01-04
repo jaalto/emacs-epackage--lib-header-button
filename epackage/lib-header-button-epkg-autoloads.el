@@ -1,0 +1,6 @@
+(autoload 'header-button-get                    "header-button" "" nil)
+(autoload 'header-button-label                  "header-button" "" nil)
+(autoload 'header-button-format                 "header-button" "" nil)
+(autoload 'header-button-activate               "header-button" "" nil)
+(autoload 'header-button-push                   "header-button" "" t)
+(provide 'lib-header-button-epkg-autoloads)
