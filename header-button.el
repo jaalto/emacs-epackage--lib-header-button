@@ -1,10 +1,10 @@
 ;;; header-button.el --- clickable buttons in header lines
 
-;; Copyright (C) 2010-2011  Jonas Bernoulli
+;; Copyright (C) 2010-2012  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20100604
-;; Version: 0.2.0
+;; Version: 0.2.1
 ;; Homepage: https://github.com/tarsius/header-button
 ;; Keywords: extensions
 
@@ -95,9 +95,9 @@ In addition, the keyword argument :type may be used to specify a
 button-type from which to inherit other properties; see
 `define-button-type'.
 
-To actually create the header button variable `header-line-format'
-to the string returned by this function (or a string created by
-concatenating this string with others."
+To actually create the header button set the value of variable
+`header-line-format' to the string returned by this function
+\(or a string created by concatenating that string with others."
   (let ((type-entry (or (plist-member properties 'type)
 			(plist-member properties :type))))
     (when (plist-get properties 'category)
