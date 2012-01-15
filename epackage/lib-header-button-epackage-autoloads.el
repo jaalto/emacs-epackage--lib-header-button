@@ -3,4 +3,4 @@
 (autoload 'header-button-format                 "header-button" "" nil)
 (autoload 'header-button-activate               "header-button" "" nil)
 (autoload 'header-button-push                   "header-button" "" t)
-(provide 'lib-header-button-epkg-autoloads)
+(provide 'lib-header-button-epackage-autoloads)
