@@ -1,10 +1,10 @@
 ;;; header-button.el --- clickable buttons in header lines
 
-;; Copyright (C) 2010-2011  Jonas Bernoulli
+;; Copyright (C) 2010-2012  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20100604
-;; Version: 0.2.0
+;; Version: 0.2.2
 ;; Homepage: https://github.com/tarsius/header-button
 ;; Keywords: extensions
 
@@ -80,7 +80,7 @@
   "Get the property of header button BUTTON named PROP."
   (let ((entry (plist-member button prop)))
     (if entry
-	(cadr entry)
+        (cadr entry)
       (get (plist-get button 'category) prop))))
 
 (defun header-button-label (button)
@@ -95,22 +95,22 @@ In addition, the keyword argument :type may be used to specify a
 button-type from which to inherit other properties; see
 `define-button-type'.
 
-To actually create the header button variable `header-line-format'
-to the string returned by this function (or a string created by
-concatenating this string with others."
+To actually create the header button set the value of variable
+`header-line-format' to the string returned by this function
+\(or a string created by concatenating that string with others."
   (let ((type-entry (or (plist-member properties 'type)
-			(plist-member properties :type))))
+                        (plist-member properties :type))))
     (when (plist-get properties 'category)
       (error "Button `category' property may not be set directly"))
     (if (null type-entry)
-	(setq properties
-	      (cons 'category
-		    (cons (button-category-symbol 'header) properties)))
+        (setq properties
+              (cons 'category
+                    (cons (button-category-symbol 'header) properties)))
       (setcar type-entry 'category)
       (setcar (cdr type-entry)
-	      (button-category-symbol (car (cdr type-entry)))))
+              (button-category-symbol (car (cdr type-entry)))))
     (apply #'propertize label
-	   (nconc (list 'button (list t) 'label label) properties))))
+           (nconc (list 'button (list t) 'label label) properties))))
 
 (defun header-button-activate (button)
   "Call header button BUTTON's `:action' property."
@@ -120,11 +120,14 @@ concatenating this string with others."
   "Perform the action specified by the pressed header button."
   (interactive)
   (let* ((posn (event-start last-command-event))
-	 (object (posn-object posn))
-	 (buffer (window-buffer (posn-window posn)))
-	 (button (text-properties-at (cdr object) (car object))))
+         (object (posn-object posn))
+         (buffer (window-buffer (posn-window posn)))
+         (button (text-properties-at (cdr object) (car object))))
     (with-current-buffer buffer
       (header-button-activate button))))
 
 (provide 'header-button)
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; End:
 ;;; header-button.el ends here
